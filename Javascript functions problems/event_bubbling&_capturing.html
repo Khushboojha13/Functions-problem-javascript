@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            min-height:100px;
+             min-width:100px;
+             padding:30px;
+             border:2px solid black;
+             position:relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="grandparent">
+        <div id="parent">
+            <div id="child"></div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector("#grandparent").addEventListener("click",()=>{
+              console.log("Grandparent clicked");
+        },false)
+         
+        document.querySelector("#parent").addEventListener("click",(e)=>{
+                console.log("Parent clicked");  //let if we click parent then in event bubbling output will be parent-> grandparent    no child will b clicked here
+
+               // e.stopPropagation(); //here this stop propogation helps us stop the propogation- here propogation will stop and in event bubbling garndparent will not be called
+            },false) 
+ 
+             //note if we mix true and false then event capturing happens first then event bubbling happens 
+
+            document.querySelector("#child").addEventListener("click",(e)=>{
+                console.log("Child clicked")
+
+                e.stopPropagation();
+            },false)
+
+            //Note- if we don't pass anything to the addeventlistener boolean - then event bubbling behaviour will be shown by events by default that from child to grandparent
+
+            //if we give false as boolean then event bubbling is followed
+    
+     //try e.stoppropogation in event capturing
+
+
+    </script>
+</body>
+</html>

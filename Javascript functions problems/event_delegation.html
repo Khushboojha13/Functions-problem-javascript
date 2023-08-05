@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!--  <div>
+            <ul class="categories">
+              <li id="laptops">Laptops</li>
+              <li id="camera">Cameras</li>
+              <li id="shoes">Shoes</li>
+        </ul> 
+       </div>  -->
+
+       <!--second example to see event delegation-->
+
+       <div id="form">
+        <input type="text" id="name" data-uppercase> <!--here we want whatever we gonna write in input name field it should converted into capital so we use here data attribute and we have created our own data- attribute i.e data-uppercase -->
+
+        <!--the use of this data-attribute to name input then suppose we have 20 input fields then attaching every addEventListener("keyup",(){})  to every input filed then it is not good approach what we can do is we can make one addEventListener and attach data-attribute to every input field -->
+        <input type="text" id="phone">
+        <input type="text" id="mobile">
+       </div>
+
+       <script>
+     /*      document.querySelector(".categories").addEventListener("click",(e)=>{ //e here is event object
+               // console.log("You clicked me");
+               console.log(e.target); //e.target will give directly give us which child element is targetting   -and here we can use this target element to redirect user to different url location
+
+               console.log(e.target.id);
+                //here we will directly get the name of child element clicked
+
+               // console.log(e.target.class);-- it doesn't work therefore give id to child element not the class
+               
+               if(e.target.tagName=="LI") 
+
+               //here we haved added if cond b/c let suppose we have lot of other element also inside categories parent and we want to redirect to other page through url only for li so if we don't attach if then for every child we will redirect to other page   
+
+
+               window.location.href= "/"+e.target.id;  //here it will do that if we click on laptops it will redirect to /laptops url and same for cameras and shoes- here it will giver error b/c there is no such page  like laptops, cameras and shoes 
+             })
+ 
+          
+             //this is single event listener we have to add to parent only and when we click on laptops, cameras and shoes event will bubble out and event will get triggered and You clicked me text shown 
+
+             */
+
+
+             document.querySelector("#form").addEventListener("keyup",(e)=>{  //here keyup is for uppercase
+                   console.log(e); //it is an event object- it will give here keyboard events
+ 
+                   if(e.target.dataset.uppercase!=undefined) //here we are checking which input we targeted has data-uppercase attribute present
+
+                   e.target.value= e.target.value.toUpperCase(); //whichever element input satisfy the cond we will change its value into uppercase
+
+             })
+       </script>
+</body>
+</html>

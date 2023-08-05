@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+        <p>WELCOME TO MY HOME</p>
+        <p>ye hai mera ghar</p>
+        <p>yaha barish bhaut hoti hai</p>
+
+
+</body>
+            
+    
+        <script>
+              window.onload=fadi;
+              function fadi(){
+                 let element=document.getElementById("body");
+                 element.style.opacity=1;
+                 let intervalid= setInterval(()=>{
+                      if(element.style.opacity>0){
+                        element.style.opacity-=0.1;
+                      }
+                      else{
+                        clearInterval(intervalid);
+                      }
+                 },200)
+              }
+        </script>
+
+</html>

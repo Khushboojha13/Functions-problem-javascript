@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+           <b>Enter first number:</b>  <!--yaha ham h1 ki jagah b use kar rahe hai b use karne se input box be samne aa jayega b/c is inline but h1 is block to input box second line me chala jata-->
+           <input type="number" id="input1">
+           <b>Enter second number:</b>
+           <input type="number" id="input2">
+           <button id="adding" onclick="add()">ADD</button>
+           <button id="subtracting" onclick="subtract()">SUBTRACT</button>
+           <p></p>
+
+           <script>
+                 var globalvariable1= 7;
+                 var globalvariable2= 4;
+
+                 function add(){
+                    var globalvariable1= Number(document.getElementById("input1").value); //here we are manipulating the value of global variables by asking it from user
+                    var globalvariable2= Number(document.getElementById("input2").value);
+                    var result= globalvariable1+globalvariable2;
+                     
+                    document.querySelector("p").innerHTML= result;
+                 }
+                  
+                 function subtract(){
+                    var globalvariable1= Number(document.getElementById("input1").value);
+                    var globalvariable2= Number(document.getElementById("input2").value);
+                    var result1= globalvariable1-globalvariable2;
+                     
+                    document.querySelector("p").innerHTML= result1;
+                 }
+
+           </script>
+</body>
+</html>
+
+//Declare a variable outside the functions.
+//Assign a value to a variable inside a function without declaring it using the “var” keyword.
+
+// In this example, we will define global variables with user input and manipulate them from inside the function
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <h1>Welcome to my project</h1>
+       <textarea  id="texts" oninput="chalo()" cols="30" rows="10"></textarea>
+       <p>Count words: <span id="s1">0</span> </p>
+        <p>Count characters: <span id="s2">0</span></p>
+       <script>
+             function chalo(){
+                      let word1= document.getElementById("texts").value;  //ham yaha add eventlistener input bhi use kar sakte hai instead of oninput function dene ke textarea me html me iska code niche dekho
+
+                      word1= word1.trim();
+                            let splitword1= word1.replace(/[\t\n\r\.\?\!]/gm, " ").split(" ");
+                            
+                            let countss=0;
+                            let char=0;
+                            for(let i=0;splitword1.length;i++){
+                                if(splitword1[i]!=" "){
+                                    countss++;
+                                }
+                                  for(let j=0;splitword1[i].length;j++)
+                                  char++;
+                            }
+                            document.getElementById("s1").innerHTML= countss;
+                      document.getElementById("s2").innerHTML= char;
+                }   
+
+               /* function chalo(){
+                      let word= document.getElementById("texts").value;
+                      word= word.trim();
+                      let splitkaro= word.replace(/[\t\n\r\.\?\!]/gm, " ").split(" ");
+                      let count1=0;
+                      let i=0;
+                      let counting = splitkaro.filter((x)=>{
+                            if(splitkaro[i]!=" "){
+                                count1=count1+1;
+                            }
+                            i++;
+                            return count1; 
+                        })
+                        let y1= counting;
+                        document.getElementById("s1").innerHTML=  y1;      
+                } */
+
+              /*  document.getElementById("texts").addEventListener("input",function chaloo(){
+                            let word1= this.value;  //yaha this jispe addeventlistener kispe laga hai uski value de dega
+                           /* word1= word1.trim();
+                            let splitword1= word1.replace(/[\t\n\r\.\?\!]/gm, " ").split(" ");
+                            let countss=0;
+                            let char=0;
+                            for(let i=0;splitword1.length;i++){
+                                if(splitword1[i]!=" "){
+                                    countss++;
+                                }
+                                  for(let j=0;splitword1[i].length;j++)
+                                  char++
+                            }
+                            document.getElementById("s1").innerHTML= countss;
+                            document.getElementById("s2").innerHTML= char;
+                })  */
+       </script>
+</body>
+</html>

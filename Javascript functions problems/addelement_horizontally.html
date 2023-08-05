@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      <button onclick="insert()">Click here to create box through div</button>
+      <div id="division"></div>
+
+
+      <br>
+      <br>
+     <button onclick="function2()">Click here to create box through table</button>
+      <table>
+            <tr id="tablerow">
+                
+            </tr>
+      </table>
+      <script>
+            let number=1;
+        function insert(){
+            
+            let div= document.createElement("div");
+            div.innerHTML=number;
+            document.getElementById("division").prepend(div);
+            
+            div.style.backgroundColor="red";
+            div.style.width="10%";
+            div.style.height="80%";
+            div.style.border="3px solid black";
+            //div.style.border-radius="50%";
+            div.style.display="inline grid";
+            div.style.marginInline="7px";
+
+
+            number++;
+        }
+
+          let number1=1;
+          var arrray=[];
+         function function2(){
+             let td= document.createElement("td");
+             td.innerHTML=number1;
+             document.getElementById("tablerow").prepend(td);
+
+             td.style.backgroundColor="green";
+            td.style.width="10%";
+            td.style.height="30%";
+            td.style.border="3px solid black";
+            //div.style.border-radius="50%";
+            td.style.display="inline grid";
+            td.style.paddingInline="10px";
+
+            number1++;
+            arrray.push(number1);
+         }
+
+      
+      </script>
+</body>
+</html>

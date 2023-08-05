@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <h1>Welcome to override</h1>
+       <p>Click the button to see the override new:</p>
+       <button>Click here</button>
+       <p id="up"></p>
+       <p id="down"></p>
+
+       <h1 style="color:green;" id="h1">
+        GeeksForGeeks
+    </h1>
+  
+    <p id="GFG_UP" style="font-size: 15px; 
+                          font-weight: bold;">
+    </p>
+  
+    <button onclick="GFG_Fun()">
+        click here
+    </button>
+  
+    <p id="GFG_DOWN" style="color:green; 
+                            font-size: 20px; 
+                            font-weight: bold;">
+    </p>
+
+
+       <script>
+             let down = document.getElementById("down");
+             down.innerHTML= Fun();
+             function Fun(){
+                return "Hello this is upper function";
+             }
+
+             let btn=document.querySelector("button");
+             btn.addEventListener("click",func);
+
+             function func(){
+                let newo= Fun1;
+                function Fun1(){
+                    return "hello I am override function";
+                }
+                down.innerHTML= Fun1();
+             }
+
+
+
+             var up1 = document.getElementById('GFG_UP');    
+          
+          up1.innerHTML = "Click on the button to override"
+                      + " the function.";
+            
+          var down1 = document.getElementById('GFG_DOWN');
+            
+          down1.innerHTML = "Floor value of '2.345' is ";
+            
+          function GFG_Fun() {
+                
+              // Override
+              parseFloat = function(x) {
+                  return "Floor value of '2.345' is "
+                              + Math.floor(x);
+              }
+                
+              // Overriding the parseFloat function and
+              // use it as Math.floor
+              down1.innerHTML = parseFloat(2.345);
+          }
+
+       </script>
+
+</body>
+</html>

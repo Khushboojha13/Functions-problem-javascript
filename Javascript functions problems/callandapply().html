@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <h1>WELCOME TO CALL AND APPLY WORKING</h1>
+         <p>call method()</p>
+         <button id="btn1" onclick="calling()">Click here</button>
+         <p id="para"></p>
+         <p>apply method()</p>
+         <button id="btn2" onclick="applying()">Click here</button>
+         <p id="para1"></p>
+
+         <script>
+              function calling(){
+                    let calls={
+                          name:"khusho",
+                    
+                       func1:function(names){
+                            return("You have called " + this.name+ " method " + names);
+                          }
+                        }
+
+                    let x=calls.func1.call(calls,"helloo");
+                     document.getElementById("para").innerHTML= x;
+
+                } 
+
+
+
+                function applying(){
+                    let applo={
+                        name:"mango",
+                        color:"yellow",
+                    }
+                    function fruit(taste){
+                        return(this.name+ " is "+this.color+" in color "+" and it is "+taste)
+                    }
+
+                   let y = fruit.apply(applo,["sweet"]);
+                   document.getElementById("para1").textContent=y;
+                }
+         </script>
+</body>
+</html>

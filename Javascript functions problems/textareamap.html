@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body style="text-align: center">
+        <h1 style="color: green">GeeksforGeeks</h1>
+      
+        <p>
+            Type in the textbox to automatically count the words
+            </p>
+      
+        <textarea id="word" rows="10" cols="60"> </textarea>
+        <br /><br />
+      
+        <p>
+            Word Count:
+            <span id="show">0</span>
+        </p>
+        <p>
+            Characters count:
+            <span id="char0">0</span>
+        </p>
+      
+        <script>
+            document
+              .querySelector("#word")
+              .addEventListener("input", function countWord() {
+                let res = [];
+                let chars=0;
+                let str = this.value.replace(/[\t\n\r\.\?\!]/gm, " ").split(" ");
+                str.map((s) => {
+                  let trimStr = s.trim();
+                  console.log(trimStr);
+                  if (trimStr.length > 0) {
+                        for(let j=0;j<trimStr.length;j++){
+                            chars++;
+                        }
+                    res.push(trimStr);
+                  }
+                });
+                console.log(res);
+                document.querySelector("#show").innerText = res.length;
+                document.querySelector("#char0").innerText= chars;
+              });
+        </script>
+    </body>
+   
+</body>
+</html>
